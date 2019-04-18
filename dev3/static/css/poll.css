@@ -1,0 +1,40 @@
+*{
+    margin:0
+    padding:0
+}
+
+.kuang{
+    width:700px;
+    height:900px;
+     background-image: url(../img/bj3.jpg);
+    margin: 0 auto;
+}
+
+.imga{
+    width:700px;
+    height:900px;
+}
+
+.top{
+
+    width:600px;
+    height:100px;
+    float: left;
+    border:1px solid #999;
+    margin-left:50px;
+    margin-bottom:20px ;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.bottom{
+    width:600px;
+    height:600px;
+    float: left;
+    font-weight: 700;
+    font-size:18px;
+    line-height:25px;
+    margin-left:50px;
+    border:1px solid #999;
+    text-align: left;
+}

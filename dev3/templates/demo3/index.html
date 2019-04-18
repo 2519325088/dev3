@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+</head>
+<body>
+    <div class="kuang">
+        
+        <div class="top">
+            <h1>问题来了，你是否准备好了吗？？？？</h1>
+        </div>
+        <div class="bottom">
+            <ul>
+                {% for i in listp %}
+                    <li><a href="{% url 'demo3:detail' i.id %}">{{i.pname}}</a></li>
+                {%endfor%}
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

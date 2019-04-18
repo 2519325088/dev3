@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static '/css/detail.css' %}">
+</head>
+<body>
+    <div class="kuang">
+
+        <div class="top">
+            <h1>{{wt.pname}}</h1>
+        </div>
+        <div class="bottom">
+            <form action="">
+                <ul>
+                    {% for i in wt.option_set.all %}
+                        <li>{{i.oname}}<input type="radio" value="i.id" name="xx"></li>
+                    {%endfor%}
+                </ul>
+
+                <input type="submit" value="确定">
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
