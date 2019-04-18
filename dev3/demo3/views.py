@@ -17,5 +17,10 @@ def detail(request,id):
 
 
 def poll(request,id):
-    oid=request.POST['xx']
-    Option.objects.get(pk=oid).oshu
+    wt = Problem.objects.get(pk=id)
+    oid=request.POST['wname']
+    xuan=Option.objects.get(pk=oid)
+    xuan.oshu+=1
+    xuan.save()
+    return render(request,'demo3/poll.html',{'wt':wt,'pshu':oid})
+

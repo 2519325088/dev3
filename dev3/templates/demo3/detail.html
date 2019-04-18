@@ -13,16 +13,15 @@
             <h1>{{wt.pname}}</h1>
         </div>
         <div class="bottom">
-            <form action="">
+            <form action="{% url 'demo3:poll' wt.id %}" method="post">
                 <ul>
                     {% for i in wt.option_set.all %}
-                        <li>{{i.oname}}<input type="radio" value="i.id" name="xx"></li>
+                        <li>{{i.oname}}<input type="radio" name="wname" value="{{i.id}}" ></li>
                     {%endfor%}
+                    <input type="submit" value="确定">
                 </ul>
-
-                <input type="submit" value="确定">
             </form>
-
+            <a href="{% url 'demo3:index' %}"><buttom>返回首页</buttom></a>
         </div>
     </div>
 </body>

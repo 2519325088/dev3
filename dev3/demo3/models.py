@@ -10,7 +10,7 @@ class Problem(models.Model):
 
 class Option(models.Model):
     oname=models.CharField(max_length=100)
-    oshu=models.IntegerField
+    oshu=models.IntegerField(default=0)
     pid=models.ForeignKey('Problem',on_delete=models.CASCADE)
 
     def __str__(self):

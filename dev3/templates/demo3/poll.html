@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     {% load static from staticfiles %}
-    <link rel="stylesheet" href="{% static '/css/detail.css' %}">
+    <link rel="stylesheet" href="{% static '/css/poll.css' %}">
 </head>
-<body>
     <div class="kuang">
+<body>
 
         <div class="top">
             <h1>{{wt.pname}}</h1>
@@ -22,7 +22,7 @@
 
                 <input type="submit" value="确定">
             </form>
-
+            <a href="{% url 'demo3:index' %}"><buttom>返回首页</buttom></a>
         </div>
     </div>
 </body>
