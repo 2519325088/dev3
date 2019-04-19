@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,Http404
 
 from .models import Problem,Option
 
@@ -17,10 +17,14 @@ def detail(request,id):
 
 
 def poll(request,id):
-    wt = Problem.objects.get(pk=id)
-    oid=request.POST['wname']
-    xuan=Option.objects.get(pk=oid)
-    xuan.oshu+=1
-    xuan.save()
-    return render(request,'demo3/poll.html',{'wt':wt,'pshu':oid})
+    try:
+        oid=request.POST['wname']
+        wt = Problem.objects.get(pk=id)
+        xuan=Option.objects.get(pk=oid)
+        xuan.oshu+=1
+        xuan.save()
+        return render(request,'demo3/poll.html',{'wt':wt,'pshu':oid})
+    except:
+
+        return HttpResponse('你都没选，还想跑！！！')
 
